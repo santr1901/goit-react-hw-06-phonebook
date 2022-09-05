@@ -16,7 +16,7 @@ const Form = ({ onSubmit }) => {
 
   const addToContacts = event => {
     event.preventDefault();
-    onSubmit(name, number);
+    onSubmit({ name, number });
     resetForm();
   };
 
