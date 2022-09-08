@@ -1,6 +1,6 @@
 import css from './ContactList.module.css';
 
-const ContactList = ({ contacts, onDeleteContact }) => {
+const ContactList = ({ contacts, removeContact }) => {
   return (
     <ul className={css.contacts_list}>
       {contacts.map(contact => (
@@ -11,7 +11,7 @@ const ContactList = ({ contacts, onDeleteContact }) => {
           <button
             className={css.delete_btn}
             type="button"
-            onClick={() => onDeleteContact(contact.id)}
+            onClick={() => removeContact(contact.id)}
           >
             delete
           </button>
