@@ -1,9 +1,16 @@
-import { createStore } from 'redux';
-import rootReducer from './rootReducer';
+import { configureStore } from '@reduxjs/toolkit';
 
-const store = createStore(
-  rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+import contactsReducer from './contactItems/items-reduser';
+import filterReducer from './filter/filter-reduser';
+
+const store = configureStore({
+  reducer: {
+    items: contactsReducer,
+    filter: filterReducer,
+  },
+});
+// import rootReducer from './rootReducer';
+
+// const store = configureStore(rootReducer);
 
 export default store;
