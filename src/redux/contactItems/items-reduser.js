@@ -3,7 +3,9 @@ import { addContact, removeContact } from './items-actions';
 
 /* Redux-toolkit */
 const contactsReducer = createReducer([], {
-  [addContact]: (store, { payload }) => [...store, payload],
+  [addContact]: (store, { payload }) => {
+    store.push(payload);
+  },
   [removeContact]: (store, { payload }) =>
     store.filter(({ id }) => id !== payload),
 });
